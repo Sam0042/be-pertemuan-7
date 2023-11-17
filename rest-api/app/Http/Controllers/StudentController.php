@@ -24,7 +24,7 @@ class StudentController extends Controller
             return response()->json($data,200);
         }
 
-        //filtering
+        //filtering by jurusan
         elseif($request->has('jurusan')){
             $jurusan = $request->input('jurusan');
 
@@ -35,7 +35,7 @@ class StudentController extends Controller
             return response()->json($data,200);
         }
 
-        //get all
+        //filtering by nama
         elseif($request->has('nama')){
             $nama = $request->input('nama');
 
@@ -45,6 +45,7 @@ class StudentController extends Controller
             ];
             return response()->json($data,200);
         }
+        //get all students
         else{
             $students = Student::all();
             $data = [
